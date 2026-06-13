@@ -114,6 +114,31 @@ cd streaming-06-scenarios
 code .
 ```
 
+### Set Up Virtual Environment
+
+Open a VS Code terminal in your project folder.
+If running Windows, use **PowerShell**.
+Run the commands one at a time.
+
+```shell
+# set up virtual environment
+uv self update
+uv python pin 3.14
+uv sync --extra dev --extra docs --upgrade
+
+uvx pre-commit install
+git add -A
+uvx pre-commit run --all-files
+```
+
+### Activate VS Code
+
+- Open the Command Palette (menu: View/Command Palette, or `Ctrl+Shift+P`)
+- Type and choose: `Python: Select Inerpreter`
+- Choose the interpreter inside this project's `.venv` folder (usually .\.venv\Scripts\python.exe)
+- Open the Command Palette again (same as before)
+- Type or choose: `Developer: Reload Window`
+
 ### In VS Code Terminal 1: Start Kafka (kafka)
 
 For full instructions see
@@ -192,21 +217,9 @@ Run the commands one at a time.
 # reset uv cache only if/when you start getting strange dependency errors
 # uv cache clean
 
-uv self update
-uv python pin 3.14
-uv sync --extra dev --extra docs --upgrade
-
-uvx pre-commit install
-
-git add -A
-uvx pre-commit run --all-files
-# repeat if changes were made
-git add -A
-uvx pre-commit run --all-files
-
 # run the producer
 clear
-uv run python -m streaming.kafka_producer_case
+uv run python -m streaming.kafka_producer_kjleopold
 
 # do chores
 uv run ruff format .
@@ -230,7 +243,7 @@ Clear the terminal, then start the consumer.
 
 ```shell
 clear
-uv run python -m streaming.kafka_consumer_case
+uv run python -m streaming.kafka_consumer_kjleopold
 ```
 
 To start fresh, see
