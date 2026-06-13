@@ -115,6 +115,10 @@ Consumer executed successfully!
 A new file `project.log` will appear in the root project folder
 and processed data will appear in data/output/.
 
+## Sample Output
+
+![Sales Chart](data/output/sales_chart_kjleopold.png)
+
 ## Command Reference
 
 The commands below are used in the workflow guide above.
