@@ -40,6 +40,10 @@ The goal is to see how the parts work together in one complete scenario.
 
 ## Custom Modifications
 
+These modifications extend the original sales pipeline by classifying
+transactions into customer value categories and generating additional analytics
+from those classifications.
+
 For Phase 4, I added a derived field called `customer_value` that classifies
 sales as low, medium, or high based on the total sale amount.
 
