@@ -283,12 +283,9 @@ bin/kafka-topics.sh --create \
 
 Open another VS Code terminal. Rename it `producer`.
 If running Windows, use **PowerShell**.
-Run the commands one at a time.
+Clear the terminal, then start the producer.
 
 ```shell
-# reset uv cache only if/when you start getting strange dependency errors
-# uv cache clean if needed
-
 # run the producer
 clear
 uv run python -m streaming.kafka_producer_kjleopold
@@ -298,7 +295,6 @@ uv run python -m streaming.kafka_producer_kjleopold
 
 Open another VS Code terminal. Rename it `consumer`.
 If running Windows, use **PowerShell**.
-Run the commands one at a time.
 Clear the terminal, then start the consumer.
 
 ```shell
