@@ -299,11 +299,6 @@ uv run ruff check . --fix
 uv run python -m pyright
 uv run python -m pytest
 uv run python -m zensical build
-
-# save progress (not needed for peer review)
-git add -A
-git commit -m "update"
-git push -u origin main
 ```
 
 ### In VS Code Terminal 4: Run Consumer (consumer)
