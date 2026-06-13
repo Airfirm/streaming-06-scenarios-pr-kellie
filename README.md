@@ -187,7 +187,7 @@ uvx pre-commit run --all-files
 
 - Open the Command Palette (menu: View/Command Palette, or `Ctrl+Shift+P`)
 - Type and choose: `Python: Select Interpreter`
-- Choose the interpreter inside this project's `.venv` folder (usually .\.venv\Scripts\python.exe)
+- Choose the interpreter inside this project's `.venv` folder (usually .venv\Scripts\python.exe)
 - Open the Command Palette again (same as before)
 - Type or choose: `Developer: Reload Window`
 
