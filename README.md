@@ -38,6 +38,20 @@ This module combines the major skills from the course:
 
 The goal is to see how the parts work together in one complete scenario.
 
+## Custom Modifications
+
+For Phase 4, I added a derived field called `customer_value` that classifies
+sales as low, medium, or high based on the total sale amount.
+
+For Phase 5, I stored the new field in DuckDB and added a summary query that
+counts transactions by customer value category.
+
+Custom files include:
+
+- src/streaming/data_engineering/derived_fields_kjleopold.py
+- src/streaming/storage/storage_kjleopold.py
+- src/streaming/kafka_consumer_kjleopold.py
+
 ## Working Files
 
 You'll work with just these areas:
@@ -205,7 +219,7 @@ bin/kafka-topics.sh --create \
   --bootstrap-server localhost:9092 \
   --partitions 1 \
   --replication-factor 1 \
-  --topic streaming-06-scenarios-case
+  --topic streaming-06-scenarios-kjleopold
 ```
 
 ### In VS Code Terminal 3: Run Project and Producer (producer)
@@ -248,7 +262,7 @@ uv run python -m streaming.kafka_consumer_kjleopold
 
 # save progress
 git add -A
-git commit -m "update"
+git commit -m "add a meaningful comment"
 git push -u origin main
 ```
 
