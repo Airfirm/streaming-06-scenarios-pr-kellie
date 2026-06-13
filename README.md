@@ -126,6 +126,7 @@ uv self update
 uv python pin 3.14
 uv sync --extra dev --extra docs --upgrade
 
+# set up pre-commit hooks
 uvx pre-commit install
 git add -A
 uvx pre-commit run --all-files
@@ -244,6 +245,11 @@ Clear the terminal, then start the consumer.
 ```shell
 clear
 uv run python -m streaming.kafka_consumer_kjleopold
+
+# save progress
+git add -A
+git commit -m "update"
+git push -u origin main
 ```
 
 To start fresh, see
