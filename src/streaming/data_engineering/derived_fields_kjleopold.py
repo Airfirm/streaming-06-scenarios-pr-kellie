@@ -109,6 +109,8 @@ def enrich_message(
 
     total = round(total_price + tax_amount, 2)
 
+    # classify customers based on total purchase amount
+    # this derived field is used for analytics and reporting
     if total >= 250:
         customer_value = "high"
     elif total >= 100:

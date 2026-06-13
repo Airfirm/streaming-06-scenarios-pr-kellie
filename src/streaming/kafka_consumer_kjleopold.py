@@ -287,6 +287,9 @@ def process_message(
         return None
 
     enriched = enrich_message(row, region_lookup)
+
+    # log derived sales metrics, including customer_value,
+    # to categorize transactions during stream processing
     LOG.info(
         f"subtotal={enriched['subtotal']}  "
         f"tax={enriched['tax_amount']}  "
@@ -500,6 +503,8 @@ def main() -> None:
     LOG.info("SECTION E. Exit")
     LOG.info("========================")
 
+    # display DuckDB analytics summaries, including
+    # transaction counts by customer value category
     log_storage_summary(OUTPUT_DB)
 
     log_summary(consumed_count, skipped_count, stats, settings)

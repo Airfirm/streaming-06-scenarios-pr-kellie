@@ -316,6 +316,8 @@ def log_storage_summary(db_path: Path) -> None:
         GROUP BY region_id
         ORDER BY region_id
         """  # noqa: S608
+
+    # query transaction counts by customer value category
     sql_by_customer_value = f"""
         SELECT
             customer_value,
