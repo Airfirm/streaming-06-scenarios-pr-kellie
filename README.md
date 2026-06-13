@@ -11,16 +11,16 @@ This project demonstrates a complete streaming analytics pipeline using Kafka,
 DuckDB, and Python. Sales transactions are streamed through Kafka, processed by
 a consumer, enriched with derived fields, visualized, and stored for analysis.
 
-## This Project
+## Project Overview
 
-This project brings the full streaming analytics workflow together.
+The full streaming analytics workflow is brought together in a single pipeline.
 
 The project uses Kafka to move sales messages from a producer to a consumer.
 The producer sends validated sales messages to a Kafka topic.
 The consumer reads each message, validates required fields, computes derived values,
 updates a live chart, writes processed records to CSV, and stores results in DuckDB.
 
-This project combines several streaming analytics concepts:
+Key streaming analytics concepts demonstrated include:
 
 - producing messages
 - consuming messages
@@ -29,7 +29,7 @@ This project combines several streaming analytics concepts:
 - visualizing the stream
 - storing processed data
 
-The goal is to see how the parts work together in one complete scenario.
+The goal is to demonstrate how these components work together in a complete streaming analytics pipeline.
 
 For my custom project, I extended the pipeline by classifying transactions as
 low, medium, or high value based on total sale amount. This allows the consumer
@@ -38,13 +38,12 @@ patterns and sales performance.
 
 ## Dataset
 
-This project streams records from `data/sales.csv`, which contains
+Sales records are streamed from `data/sales.csv`, which contains
 sales transaction records including order information, product details,
 customer information, pricing, and payment data.
 
-The project also uses `regions.csv`, `products.csv`,
-`currencies.csv`, and `discount_codes.csv` as static reference tables
-for validation and enrichment.
+Additional reference tables include `regions.csv`, `products.csv`,
+`currencies.csv`, and `discount_codes.csv` for validation and enrichment.
 
 ## Kafka Topic
 
@@ -61,8 +60,8 @@ The consumer receives sales transaction messages from Kafka and
 processes each record by:
 
 - validating required fields
-- calculating derived fields including subtotal, tax_amount, total, and customer_value
-- classifying transactions by customer_value
+- calculating derived fields including `subtotal`, `tax_amount`, `total`, and `customer_value`
+- classifying transactions by `customer_value`
 - updating a live sales chart
 - writing processed records to CSV
 - storing records in DuckDB
@@ -126,7 +125,7 @@ Consumer executed successfully!
 ```
 
 A new file `project.log` will appear in the root project folder
-and processed data will appear in data/output/.
+and processed data will appear in `data/output/`.
 
 You should also see sales records stored in DuckDB, a generated sales chart,
 and analytics summarizing transactions by customer value category (low,
